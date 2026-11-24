@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Emelyne Lavoine Architecte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: calme, précis, haut de gamme — une monographie d'architecte.
+   IDEA: le site se lit comme un carnet de projets : le monogramme EL est le cadre, la photo est l'œuvre.
+   PICTURE: plein écran sur une villa, lent zoom, voile noir, logo EL en transparence par-dessus.
+   COLOUR and TYPE: encre #141414, pierre #f2eee7, béton #d9d4cb, bronze #9c8667 en filet ; Cormorant Garamond + Hanken Grotesk.
+   LAYOUT: bandes pleine largeur, grilles asymétriques, beaucoup d'air, révélations douces au défilement. */
+:root{color-scheme:light;--ink:#141414;--stone:#f2eee7;--concrete:#d9d4cb;--bronze:#9c8667;--muted:#5d564c;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--stone);color:var(--ink);font:300 17px/1.65 var(--sans);overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 max(5vw,20px)}
+.label{font:500 12px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--bronze)}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:clamp(38px,5vw,68px)}
+.it{font-style:italic}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px max(5vw,20px);color:#fff;transition:background .4s,color .4s,padding .4s}
+.nav.solid{background:rgba(242,238,231,.94);backdrop-filter:blur(10px);color:var(--ink);padding-block:12px;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand svg{width:34px;height:34px;fill:currentColor}
+.brand span{font:500 12px/1.3 var(--sans);letter-spacing:.3em;text-transform:uppercase}
+.menu{display:flex;gap:clamp(16px,2.6vw,36px);align-items:center;list-style:none;margin:0;padding:0}
+.menu a{font:500 12px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;text-decoration:none;padding:12px 0;position:relative}
+.menu a::after{content:"";position:absolute;left:0;right:100%;bottom:6px;height:1px;background:currentColor;transition:right .35s}
+.menu a:hover::after{right:0}
+.menu .cta{border:1px solid currentColor;padding:13px 20px}
+.menu .cta::after{display:none}
+.burger{display:none;background:none;border:0;color:inherit;width:44px;height:44px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:560px;overflow:hidden;color:#fff;display:grid;place-items:center;text-align:center}
+.hero .bg{position:absolute;inset:0;background:url(img/villa-contemporaine.jpg) center/cover;animation:kb 24s ease-in-out infinite alternate;transform-origin:60% 45%}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.14) translate(-1%,-1%)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.55),rgba(10,10,10,.38) 45%,rgba(10,10,10,.7))}
+.hero .in{position:relative;z-index:1;display:grid;justify-items:center;gap:26px;padding:0 20px}
+.hero .mono{width:clamp(110px,14vw,170px);fill:#fff;opacity:0;animation:rise 1.6s .2s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .name{font:500 13px/1.6 var(--sans);letter-spacing:.42em;text-transform:uppercase;opacity:0;animation:rise 1.4s .7s forwards}
+.hero h1{font-size:clamp(38px,6vw,84px);opacity:0;animation:rise 1.4s 1s forwards}
+.hero .sub{font:300 16px/1.5 var(--sans);letter-spacing:.06em;opacity:0;animation:rise 1.4s 1.3s forwards;max-width:560px}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.scrollcue{position:absolute;bottom:28px;left:50%;z-index:1;width:1px;height:64px;background:linear-gradient(#fff,transparent);animation:cue 2.4s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+/* manifesto */
+.manifesto{padding:clamp(90px,14vw,180px) 0;text-align:center}
+.manifesto h2{font-size:clamp(34px,4.6vw,62px);max-width:980px;margin:22px auto 0}
+.manifesto p{max-width:640px;margin:34px auto 0;color:var(--muted)}
+.services{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 34px;margin-top:56px;padding-top:30px;border-top:1px solid var(--concrete);max-width:900px;margin-inline:auto}
+.services span{font:500 12px/1.6 var(--sans);letter-spacing:.26em;text-transform:uppercase}
+
+/* projects */
+.projects{background:#fff;padding:clamp(80px,11vw,150px) 0}
+.phead{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:64px}
+.phead p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:28px}
+.card{position:relative;overflow:hidden;text-decoration:none;color:#fff}
+.card .ph{overflow:hidden;height:100%}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.card:hover img{transform:scale(1.06)}
+.card .cap{position:absolute;inset:auto 0 0;padding:28px;background:linear-gradient(transparent,rgba(0,0,0,.62));display:grid;gap:6px}
+.card h3{font-size:clamp(28px,2.6vw,40px);font-style:italic}
+.card small{font:500 11px/1.4 var(--sans);letter-spacing:.26em;text-transform:uppercase;opacity:.9}
+.c1{grid-column:span 7;height:640px}.c2{grid-column:span 5;height:640px;margin-top:90px}.c3{grid-column:3/span 8;height:520px}
+.note{font-size:13px;color:var(--muted);margin-top:26px;text-align:right}
+
+/* chantier band */
+.band{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:var(--ink);color:var(--stone)}
+.band .ph{overflow:hidden;min-height:560px}
+.band .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 2s}
+.band.on .ph img{transform:scale(1)}
+.band .txt{padding:clamp(56px,7vw,110px);display:grid;align-content:center;gap:24px}
+.band h2{font-size:clamp(36px,4.2vw,60px)}
+.band p{color:#cfc8bc;margin:0;max-width:520px}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tags span{border:1px solid rgba(242,238,231,.3);padding:9px 14px;font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
+
+/* steps */
+.steps{padding:clamp(80px,11vw,150px) 0}
+.steps h2{margin:18px 0 70px;max-width:760px}
+.sgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px;counter-reset:s}
+.step{border-top:1px solid var(--ink);padding-top:26px;position:relative}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:italic 300 46px/1 var(--serif);color:var(--bronze);display:block;margin-bottom:18px}
+.step h3{font:500 13px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;margin-bottom:12px}
+.step p{margin:0;color:var(--muted);font-size:16px}
+
+/* about */
+.about{background:#fff;padding:clamp(80px,11vw,150px) 0}
+.agrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,7vw,110px);align-items:center}
+.portrait{position:relative}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.92)}
+.portrait::before{content:"";position:absolute;inset:-22px 22px 22px -22px;border:1px solid var(--bronze);z-index:0}
+.portrait img{position:relative;z-index:1}
+.portrait svg{position:absolute;right:-30px;bottom:-30px;width:110px;z-index:2;fill:var(--ink);background:var(--stone);padding:18px}
+.about h2{margin:16px 0 8px}
+.cred{font:500 12px/1.6 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.about p{margin:22px 0 0}
+.quote{font:italic 300 clamp(24px,2.4vw,32px)/1.3 var(--serif);border-left:1px solid var(--bronze);padding-left:24px;margin-top:34px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:44px;border-top:1px solid var(--concrete);padding-top:28px}
+.facts b{display:block;font:300 clamp(38px,4vw,54px)/1 var(--serif)}
+.facts span{font-size:14px;color:var(--muted)}
+
+/* instagram */
+.insta{padding:clamp(70px,9vw,120px) 0;text-align:center;background:var(--concrete)}
+.insta h2{font-style:italic;font-size:clamp(30px,4vw,54px);margin:16px 0 14px;overflow-wrap:anywhere}
+.insta p{margin:0 auto;max-width:560px;color:#3f3a33}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 28px;font:500 12px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);transition:background .3s,color .3s}
+.btn.dark,.btn:hover{background:var(--ink);color:var(--stone)}
+.btn.dark:hover{background:transparent;color:var(--ink)}
+
+/* contact */
+.contact{background:var(--ink);color:var(--stone);padding:clamp(80px,11vw,150px) 0}
+.cgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,7vw,110px)}
+.contact svg.m{width:64px;fill:var(--stone)}
+.contact h2{margin:30px 0 26px;color:#fff}
+.addr{line-height:1.9;color:#cfc8bc}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 28px}
+label{display:grid;gap:10px;font:500 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:#b9b1a4}
+.full{grid-column:1/-1}
+input,select,textarea{font:300 16px/1.5 var(--sans);color:var(--stone);background:transparent;border:0;border-bottom:1px solid rgba(242,238,231,.35);padding:12px 0;border-radius:0;outline:none;transition:border-color .3s}
+select option{color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--stone)}
+form button{justify-self:start;min-height:52px;padding:0 34px;background:var(--stone);color:var(--ink);border:1px solid var(--stone);font:500 12px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s}
+form button:hover{background:transparent;color:var(--stone)}
+.sent{grid-column:1/-1;margin:0;color:#e4dccf;min-height:1.6em}
+:focus-visible{outline:1px solid var(--bronze);outline-offset:4px}
+
+footer{background:#0d0d0d;color:#9d968a;padding:34px 0;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer svg{width:26px;fill:#9d968a}
+
+@media(max-width:900px){
+ .phead,.band,.agrid,.cgrid{grid-template-columns:minmax(0,1fr)}
+ .c1,.c2,.c3{grid-column:1/-1;height:440px;margin:0}
+ .sgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .band .ph{min-height:380px}
+ .portrait{max-width:440px}
+}
+@media(max-width:760px){
+ .burger{display:block}
+ .menu{position:fixed;inset:0;flex-direction:column;justify-content:center;gap:26px;background:var(--ink);color:var(--stone);transform:translateY(-100%);transition:transform .5s}
+ .menu.open{transform:none}
+ .menu a{font-size:15px}
+ .brand span{display:none}
+}
+@media(max-width:600px){
+ .sgrid,form,.facts{grid-template-columns:minmax(0,1fr)}
+ .c1,.c2,.c3{height:360px}
+ .portrait svg{width:80px;right:-12px;bottom:-12px}
+ .portrait::before{inset:-12px 12px 12px -12px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv,.hero *{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="el" viewBox="0 0 635 640"><rect x="0" y="0" width="47" height="640"/><rect x="0" y="0" width="635" height="47"/><rect x="588" y="0" width="47" height="640"/><rect x="400" y="592" width="235" height="48"/><rect x="400" y="165" width="45" height="475"/><rect x="162" y="165" width="283" height="48"/><rect x="162" y="165" width="45" height="475"/><rect x="162" y="592" width="155" height="48"/><rect x="207" y="380" width="73" height="47"/></symbol></svg>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Accueil"><svg viewBox="0 0 635 640"><use href="#el"/></svg><span>Emelyne Lavoine<br>Architecte</span></a>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h18M3 16h18"/></svg></button>
+  <ul class="menu" id="menu">
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#chantiers">Chantiers</a></li>
+    <li><a href="#agence">L'agence</a></li>
+    <li><a href="#contact" class="cta">Contact</a></li>
+  </ul>
+</header>
+
+<section class="hero" id="top">
+  <div class="bg" role="img" aria-label="Villa contemporaine avec piscine à débordement sur les collines de la Côte d'Azur"></div>
+  <div class="in">
+    <svg class="mono" viewBox="0 0 635 640" role="img" aria-label="Logo Emelyne Lavoine"><use href="#el"/></svg>
+    <div class="name">Emelyne Lavoine · Architecte</div>
+    <h1>Quand les matières<br><span class="it">racontent l'espace</span></h1>
+    <div class="sub">Conception &amp; rénovation de villas contemporaines et provençales sur la Côte d'Azur</div>
+  </div>
+  <span class="scrollcue" aria-hidden="true"></span>
+</section>
+
+<section class="manifesto">
+  <div class="wrap">
+    <div class="label rv">L'approche</div>
+    <h2 class="rv d1">Dessiner un lieu, ce n'est pas seulement imaginer des <span class="it">volumes.</span></h2>
+    <p class="rv d2">C'est penser à la lumière qui entrera le matin, au regard qui se prolongera vers le jardin, aux matières que l'on aura envie de toucher. Depuis Mougins, l'agence conçoit, construit et rénove des villas sur toute la Côte d'Azur, chaque projet pensé comme un cas unique, intégré à son paysage.</p>
+    <div class="services rv d3"><span>Conception</span><span>Permis de construire</span><span>Design intérieur</span><span>Suivi de chantier</span></div>
+  </div>
+</section>
+
+<section class="projects" id="projets">
+  <div class="wrap">
+    <div class="phead">
+      <div><div class="label rv">Projets</div><h2 class="rv d1" style="margin-top:18px">Chaque réalisation raconte <span class="it">une histoire</span></h2></div>
+      <p class="rv d2">Des lignes, des matières, des volumes, une lumière… et toujours la même volonté : faire de chaque idée une réalisation unique.</p>
+    </div>
+    <div class="grid">
+      <a class="card c1 rv" href="#contact"><div class="ph"><img src="img/villa-contemporaine.jpg" alt="Villa contemporaine en pierre et verre avec piscine" loading="lazy"></div><div class="cap"><small>Mougins · Construction neuve</small><h3>Villa Choulak</h3></div></a>
+      <a class="card c2 rv d1" href="#contact"><div class="ph"><img src="img/interieur.jpg" alt="Séjour en double hauteur avec mur en travertin" loading="lazy"></div><div class="cap"><small>Plans d'aménagement · Design intérieur</small><h3>Villa Mademoiselle</h3></div></a>
+      <a class="card c3 rv" href="#contact"><div class="ph"><img src="img/villa-provencale.jpg" alt="Villa provençale en pierre avec jardin de lavande et piscine" loading="lazy"></div><div class="cap"><small>Côte d'Azur · Rénovation</small><h3>Bastide provençale</h3></div></a>
+    </div>
+    <p class="note">Maquette : photos d'illustration, remplacées par les réalisations de l'agence.</p>
+  </div>
+</section>
+
+<section class="band" id="chantiers">
+  <div class="ph"><img src="img/villa-provencale.jpg" alt="Maison en pierre rénovée au milieu des lavandes" loading="lazy"></div>
+  <div class="txt">
+    <div class="label">Chantiers</div>
+    <h2 class="rv">Au départ, il n'y avait <span class="it">qu'un terrain…</span></h2>
+    <p class="rv d1">Derrière l'harmonie d'une maison achevée se cachent des mois de travail, de réflexion et de précision. Des premières structures aux espaces baignés de lumière, l'agence suit chaque étape jusqu'à ce que le chantier laisse place à un véritable lieu de vie.</p>
+    <div class="tags rv d2"><span>Construction neuve</span><span>Rénovation</span><span>Extension</span><span>Surélévation</span></div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <div class="label rv">Accompagnement</div>
+    <h2 class="rv d1">De la première esquisse <span class="it">aux derniers détails</span></h2>
+    <div class="sgrid">
+      <div class="step rv"><h3>Esquisse</h3><p>Étude de faisabilité, certificat d'urbanisme, premières intentions, plans et images 3D.</p></div>
+      <div class="step rv d1"><h3>Permis</h3><p>APS, APD, déclaration préalable ou permis de construire, jusqu'à l'obtention.</p></div>
+      <div class="step rv d2"><h3>Design intérieur</h3><p>Aménagement intérieur et extérieur, choix des matières, DQE et DCE.</p></div>
+      <div class="step rv d3"><h3>Suivi de chantier</h3><p>Maîtrise d'œuvre, coordination des artisans et réception des travaux.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="agence">
+  <div class="wrap agrid">
+    <div class="portrait rv">
+      <img src="img/portrait.jpg" alt="Portrait d'Emelyne Lavoine, architecte" loading="lazy">
+      <svg viewBox="0 0 635 640" aria-hidden="true"><use href="#el"/></svg>
+    </div>
+    <div>
+      <div class="label rv">L'architecte</div>
+      <h2 class="rv d1">Emelyne <span class="it">Lavoine</span></h2>
+      <div class="cred rv d1">Architecte DE · HMONP · Inscrite à l'Ordre</div>
+      <p class="rv d2">Diplômée de l'École nationale d'architecture de Marseille, Emelyne a complété sa formation par une année à l'Université pontificale catholique de Valparaíso, au Chili : une expérience qui lui a donné une approche poétique de l'architecture.</p>
+      <p class="rv d2">Après plusieurs années en freelance pour des agences des Alpes-Maritimes, elle fonde son agence à Mougins, où elle s'entoure d'architectes, d'architectes d'intérieur, de dessinateurs et d'un réseau d'artisans qualifiés.</p>
+      <div class="quote rv d3">« Nous travaillons chaque projet comme un cas unique et un challenge. »</div>
+      <div class="facts rv d3">
+        <div><b>14 ans</b><span>à la tête de l'agence</span></div>
+        <div><b>5,0</b><span>sur 29 avis Google</span></div>
+        <div><b>A → Z</b><span>de l'esquisse aux clés</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="insta">
+  <div class="wrap">
+    <div class="label rv">Suivez nos chantiers</div>
+    <h2 class="rv d1">@emelynelavoinearchitecte</h2>
+    <p class="rv d2">Projets, chantiers, presse et coulisses de l'agence, chaque semaine sur Instagram et LinkedIn.</p>
+    <div class="btns rv d3"><a class="btn dark" href="https://www.instagram.com/emelynelavoinearchitecte/">Instagram</a><a class="btn" href="https://www.linkedin.com/in/emelyne-lavoine-061103183/">LinkedIn</a></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap cgrid">
+    <div>
+      <svg class="m rv" viewBox="0 0 635 640" aria-hidden="true"><use href="#el"/></svg>
+      <h2 class="rv d1">Parlons de <span class="it">votre projet</span></h2>
+      <div class="addr rv d2">1459 chemin des Peyroues<br>06250 Mougins<br>04 92 99 15 72<br>contact@lavoinearchitecte.com</div>
+    </div>
+    <form id="f" class="rv d1" novalidate>
+      <label>Nom<input id="nom" name="nom" autocomplete="name" required></label>
+      <label>E-mail<input id="mail" name="mail" type="email" autocomplete="email" required></label>
+      <label>Téléphone<input id="tel" name="tel" type="tel" autocomplete="tel"></label>
+      <label>Votre projet<select id="type" name="type"><option>Construction neuve</option><option>Rénovation / extension</option><option>Surélévation</option><option>Design intérieur</option><option>Autre</option></select></label>
+      <label class="full">Votre projet en quelques mots<textarea id="msg" name="msg" placeholder="Commune, terrain, envies…"></textarea></label>
+      <button type="submit">Envoyer ma demande</button>
+      <p class="sent" id="sent" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <svg viewBox="0 0 635 640" aria-hidden="true"><use href="#el"/></svg>
+    <span>© Emelyne Lavoine Architecte · Mougins, Côte d'Azur</span>
+    <span>Mentions légales · Confidentialité</span>
+  </div>
+</footer>
+
+<script>
+{
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('solid',scrollY>60);
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  const menu=document.getElementById('menu'),burger=document.getElementById('burger');
+  burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+  menu.addEventListener('click',e=>{if(e.target.closest('a')){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+  document.querySelectorAll('.rv,.band').forEach(el=>io.observe(el));
+
+  const f=document.getElementById('f'),sent=document.getElementById('sent');
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const nom=document.getElementById('nom').value.trim(),mail=document.getElementById('mail').value.trim();
+    if(!nom||!/^\S+@\S+\.\S+$/.test(mail)){sent.textContent='Merci d\'indiquer votre nom et un e-mail valide.';return}
+    sent.textContent='Merci '+nom+' : sur le site final, votre demande arrivera directement à l\'agence. (Formulaire de démonstration.)';
+    f.reset();
+  });
+}
+</script>
+</body>
+</html>
